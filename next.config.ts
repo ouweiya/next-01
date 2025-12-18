@@ -10,4 +10,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-console.log('process.env.PAGES_BASE_PATH,', process.env.PAGES_BASE_PATH);

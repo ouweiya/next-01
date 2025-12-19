@@ -8,8 +8,10 @@ type PageProps = {
     params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-    return getAllPosts().map((post) => ({ slug: post.slug }));
+    return getAllPosts().map(post => ({ slug: post.slug }));
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -55,7 +57,7 @@ export default async function BlogPostPage(props: PageProps) {
                     <p className="text-sm text-zinc-600 dark:text-zinc-400">{post.excerpt}</p>
 
                     <div className="mt-6 space-y-4 text-zinc-800 dark:text-zinc-200">
-                        {post.content.map((p) => (
+                        {post.content.map(p => (
                             <p key={p} className="leading-7">
                                 {p}
                             </p>
